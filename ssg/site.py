@@ -5,6 +5,10 @@ class Site(self, source, dest):
     self.dest = Path(dest)
     self.parsers = parsers or []
 
+    def __init__ (self, source, dest, parsers=None):
+        self.source = Path(source)
+        self.dest = Path(dest)
+        self.parsers = parsers or []
 
     def create_dir(self, path):
         directory = self.dest / path.relative_to(self.source)
